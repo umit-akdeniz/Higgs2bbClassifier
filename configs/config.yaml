@@ -1,0 +1,14 @@
+data:
+  path: data/processed/higgs_clean.csv
+  test_split: 0.2
+
+model:
+  type: xgboost
+  params:
+    max_depth: 6
+    learning_rate: 0.1
+    n_estimators: 200
+
+output:
+  model_dir: models/
+  metrics_dir: reports/metrics/
