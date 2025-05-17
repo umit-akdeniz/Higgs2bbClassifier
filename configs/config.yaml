@@ -1,8 +1,6 @@
-# configs/config.yaml
 batch_size: 1024
 epochs: 100
 learning_rate: 0.001
 dropout_rate: 0.3
 train_file: data/train/ntuple_merged_10.h5
 test_file: data/test/ntuple_merged_0.h5
-
