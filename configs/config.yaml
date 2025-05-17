@@ -1,6 +1,62 @@
-batch_size: 1024
+atch_size: 1024
 epochs: 100
 learning_rate: 0.001
 dropout_rate: 0.3
-train_file: data/train/ntuple_merged_10.h5
-test_file: data/test/ntuple_merged_0.h5
+train_files:
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_10.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_11.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_12.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_13.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_14.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_15.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_16.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_17.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_18.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_19.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_20.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_21.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_22.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_23.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_24.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_25.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_26.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_27.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_28.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_29.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_30.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_31.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_32.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_33.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_34.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_35.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_36.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_37.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_38.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_39.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_40.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_41.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_42.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_43.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_44.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_45.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_46.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_47.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_48.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_49.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_50.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_51.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_52.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_53.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_54.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_55.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/train/ntuple_merged_56.h5
+test_files:
+  - /content/drive/MyDrive/Higgs2bbClassifierData/test/ntuple_merged_0.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/test/ntuple_merged_1.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/test/ntuple_merged_2.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/test/ntuple_merged_3.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/test/ntuple_merged_4.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/test/ntuple_merged_5.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/test/ntuple_merged_6.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/test/ntuple_merged_7.h5
+  - /content/drive/MyDrive/Higgs2bbClassifierData/test/ntuple_merged_8.h5
