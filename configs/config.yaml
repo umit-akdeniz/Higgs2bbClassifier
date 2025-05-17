@@ -1,14 +1,8 @@
-data:
-  path: data/processed/higgs_clean.csv
-  test_split: 0.2
+# configs/config.yaml
+batch_size: 1024
+epochs: 100
+learning_rate: 0.001
+dropout_rate: 0.3
+train_file: data/train/ntuple_merged_10.h5
+test_file: data/test/ntuple_merged_0.h5
 
-model:
-  type: xgboost
-  params:
-    max_depth: 6
-    learning_rate: 0.1
-    n_estimators: 200
-
-output:
-  model_dir: models/
-  metrics_dir: reports/metrics/
