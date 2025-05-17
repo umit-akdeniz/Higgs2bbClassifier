@@ -1,32 +1,45 @@
-from keras.models import Model
-from keras.layers import Input, Dense, BatchNormalization, Dropout, Add, Activation
+# src/train.py
+import yaml
+from keras.callbacks import EarlyStopping, ModelCheckpoint
+from src.model import build_residual_model
+from src.data_loader import load_multiple_files
 
-def build_residual_model(input_dim, output_dim, dropout_rate=0.3):
-    inputs = Input(shape=(input_dim,), name='input')
-    x = BatchNormalization()(inputs)
-    x = Dense(128, activation='relu')(x)
-    x = Dropout(dropout_rate)(x)
+# Konfigürasyonu yükle
+with open("configs/config.yaml", "r") as f:
+    config = yaml.safe_load(f)
 
-    # Residual block 1
-    res = Dense(128, activation='relu')(x)
-    res = Dropout(dropout_rate)(res)
-    x = Add()([x, res])
-    x = BatchNormalization()(x)
-    x = Activation('relu')(x)
+# Veriyi yükle
+X_train, y_train = load_multiple_files(config["train_files"])
 
-    # Residual block 2
-    res = Dense(128, activation='relu')(x)
-    res = Dropout(dropout_rate)(res)
-    x = Add()([x, res])
-    x = BatchNormalization()(x)
-    x = Activation('relu')(x)
+# Modeli oluştur
+model = build_residual_model(
+    input_dim=X_train.shape[1],
+    output_dim=y_train.shape[1],
+    dropout_rate=config.get("dropout_rate", 0.3)
+)
 
-    # Final layers
-    x = Dense(64, activation='relu')(x)
-    x = Dropout(dropout_rate)(x)
-    x = Dense(32, activation='relu')(x)
-    x = Dropout(dropout_rate)(x)
+model.compile(
+    optimizer="adam",
+    loss="categorical_crossentropy",
+    metrics=["accuracy"]
+)
 
-    outputs = Dense(output_dim, activation='softmax')(x)
-    model = Model(inputs=inputs, outputs=outputs)
-    return model
+# Callback'ler
+callbacks = [
+    EarlyStopping(monitor="val_loss", patience=10, restore_best_weights=True),
+    ModelCheckpoint("outputs/keras_model_best.h5", monitor="val_loss", save_best_only=True)
+]
+
+# Eğitimi başlat
+model.fit(
+    X_train,
+    y_train,
+    epochs=config["epochs"],
+    batch_size=config["batch_size"],
+    validation_split=0.2,
+    callbacks=callbacks,
+    shuffle=True
+)
+
+# Eğitim tamamlandıktan sonra modeli kaydet
+model.save("outputs/final_model.h5")
