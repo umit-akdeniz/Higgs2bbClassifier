@@ -1,5 +1,4 @@
 import numpy as np
-import tables
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from keras.callbacks import EarlyStopping, ModelCheckpoint
